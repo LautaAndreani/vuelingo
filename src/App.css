@@ -1,0 +1,46 @@
+:root {
+    --background: #181A1B;
+    --progress: #8FFD3E;
+    --progress-bg:#272A2C;
+    --text: #BABABA;
+    --active-option: rgba(4, 51, 73, 0.6);
+    --active-text:rgb(59, 177, 233);
+    --active-border: #005f8b;
+    
+    --button-bg:#46A302;
+    --button-hover:#5fdd05;
+    --button-shadow:#2f7200;
+}
+
+@font-face {
+    font-family: 'RoundPro';
+    src: url(./assets/fonts/DINRoundPro.ttf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RoundPro';
+    src: url(./assets/fonts/DINRoundPro-Medi.ttf);
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'RoundPro';
+    src: url(./assets/fonts/DINRoundPro-Bold.ttf);
+    font-weight: 600;
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'RoundPro';
+}
+
+body {
+    font-family: 'RoundPro';
+    background:var(--background);
+    padding: 1rem 0
+}
