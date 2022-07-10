@@ -13,12 +13,12 @@ import { exercises } from "./mock/exercises"
 import { Exercise } from './models/types'
 
 export default defineComponent({
+  components: { Header, Content },
   setup() {
     const questions = ref<Exercise[]>(exercises)
 
     return { questions }
   },
-  components: { Header, Content }
 })
 </script>
 

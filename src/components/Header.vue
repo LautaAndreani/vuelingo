@@ -13,7 +13,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
     setup() {
 
-    },
+    }
 })
 </script>
 
@@ -46,5 +46,6 @@ export default defineComponent({
     height: 1rem;
     background: var(--progress);
     border-radius: 10px;
+    transition: .3s ease-in-out;
 }
 </style>

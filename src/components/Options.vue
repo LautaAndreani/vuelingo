@@ -19,14 +19,13 @@ export default defineComponent({
         options: { type: Number, default: 1 }
     },
     setup(props, { emit }) {
-        const { choice: correctOption } = props
         const isActive = ref<boolean>(false)
         const userOption = ref<string[]>([])
 
         const select = (choice: string) => {
             const getAllOptions = document.querySelectorAll(".option-text") as any
             const getAllBtns = document.querySelectorAll(".option")
-            for(let i = 0; i < getAllOptions.length; i++) {
+            for (let i = 0; i < getAllOptions.length; i++) {
                 getAllOptions[i].innerText === choice ? getAllBtns[i].classList.add("isActive") : getAllBtns[i].classList.remove("isActive")
             }
             userOption.value.push(choice)

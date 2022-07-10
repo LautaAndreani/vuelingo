@@ -18,13 +18,10 @@ import success from '../assets/sounds/success.mp3'
 export default defineComponent({
     props: {
         option: String,
-        correctAnswer: { type: Object as PropType<correctAnswer>, },
+        correctAnswer: { type: Object as PropType<correctAnswer> },
     },
     setup(props) {
-        const { correctAnswer } = props
-
-        const handleClick = () => correctAnswer?.choices[correctAnswer?.correctIndex] === props.option ? onGetResult(true) : onGetResult(false)
-
+        const handleClick = () => props.correctAnswer?.choices[props.correctAnswer?.correctIndex] === props.option ? onGetResult(true) : onGetResult(false)
         const onGetResult = (result: boolean) => {
             if (result) {
                 createToast('Nice Work !', { type: 'success', toastBackgroundColor: '#5fdd05', showIcon: true })
