@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue'
+import { defineComponent, PropType, ref, watch } from 'vue'
 import { Exercise } from '../models/types'
 import Options from './Options.vue'
 import Footer from './Footer.vue'
@@ -56,5 +56,13 @@ export default defineComponent({
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: -.02rem;
+}
+
+@media screen and (max-width: 963px) {
+    .content {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
 }
 </style>

@@ -1,8 +1,9 @@
 <template>
     <footer class="footer">
         <div class="footer-container">
-            <button :disabled="!option" :class="{ 'disabled-btn': !option, 'footer-btn': option }"
-                @click="handleClick">COMPROBAR</button>
+            <button :disabled="!option" :class="{ 'disabled-btn': !option, 'footer-btn': option }" @click="handleClick">
+                COMPROBAR
+            </button>
         </div>
     </footer>
 </template>
@@ -16,26 +17,22 @@ import success from '../assets/sounds/success.mp3'
 
 export default defineComponent({
     props: {
-        option: {
-            type: String,
-            default: ''
-        },
-        correctAnswer: {
-            type: Object as PropType<correctAnswer>,
-        }
+        option: String,
+        correctAnswer: { type: Object as PropType<correctAnswer>, },
     },
     setup(props) {
-        const handleClick = () => {
-            return props.correctAnswer?.choices[props.correctAnswer.correctIndex] === props.option ? onGetResult(true) : onGetResult(false)
-        }
+        const { correctAnswer } = props
+
+        const handleClick = () => correctAnswer?.choices[correctAnswer?.correctIndex] === props.option ? onGetResult(true) : onGetResult(false)
 
         const onGetResult = (result: boolean) => {
             if (result) {
-               createToast('Nice Work !', { type: 'success', toastBackgroundColor: '#5fdd05', showIcon: true })
-               return new Audio(success).play()
+                createToast('Nice Work !', { type: 'success', toastBackgroundColor: '#5fdd05', showIcon: true })
+                return new Audio(success).play()
+            } else {
+                createToast('Try again 🙈', { type: 'danger', showIcon: true })
+                new Audio(fail).play()
             }
-            createToast('Try again 🙈', { type: 'danger', showIcon: true })
-            new Audio(fail).play()
         }
 
         return { handleClick }
@@ -77,7 +74,7 @@ export default defineComponent({
 }
 
 .footer-btn:active {
-    margin-top: .2rem;
+    margin-top: 0.2rem;
     border: none;
 }
 
@@ -95,4 +92,3 @@ export default defineComponent({
     cursor: not-allowed;
 }
 </style>
-
